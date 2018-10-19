@@ -37,6 +37,16 @@ a.list-group-item h5{
 
 
 
+a.list-group-item h5{
+    font-weight: 500;
+}
+
+
+#list img {
+    width: 64px;
+}
+
+
 
 </style>
 </head>
@@ -148,31 +158,24 @@ a.list-group-item h5{
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-                    <div class="list-group" id="list" role="tablist"></div>
+                        <div class="list-group" id="list" role="tablist"></div>
+                    <div class="list-group" id="lists" role="tablist">
                     <!--Card-->
-
-                    <div class="card">
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <div class="timeline-body comments">
-                                <div class="comment-item">
-                                    <img src="img/faces/avatar.jpg">
-                                    <p class="comment-head">
-                                        <a href="#">Brad Pitt</a> <span class="text-muted">@bradpitt</span>
-                                    </p>
-                                    <p>Awesome, man, that is awesome...</p>
-                                    <small class="text-muted">10h ago</small>
-                                </div>                                            
-                                <div class="comment-write">                                                
-                                    <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
-                                </div>
-                            </div>
-
-
-
+                    <div class="media">
+                        <img class="mr-3" src="img/faces/avatar.jpg" width="64" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <h5 class="mt-0">Media heading</h5>
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                         </div>
-                        <!--Card content-->
+                      </div>
+
+                      <div class="media">
+                        <img class="mr-3" src="img/faces/avatar.jpg" width="64" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <h5 class="mt-0">Media heading</h5>
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                      </div>
 
                     </div>
                     <!--Card-->
@@ -236,7 +239,7 @@ a.list-group-item h5{
     <!--Copyright-->
     <div class="footer-copyright hidden py-3">
         © 2018 Copyright:
-        <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+        > MDBootstrap.com </a>
     </div>
     <!--/.Copyright-->
 
