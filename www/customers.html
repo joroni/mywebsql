@@ -45,9 +45,21 @@ a.list-group-item h5{
 #list img {
     width: 64px;
 }
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0;
+    position: relative;
+    padding-bottom: 0;
+    margin-right: 1rem;
+    top: 0.32rem;
+    left: 0px;
+    font-size: 1.12rem !important;
+    line-height: inherit;
+}
 
-
-
+.img-circle {
+    border-radius: 50%;
+}
 </style>
 </head>
 
@@ -58,48 +70,59 @@ a.list-group-item h5{
     <div class="m-page scene_element scene_element--fadeinleft">
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling">
-            <div class="container">
-
-                <!-- Brand -->
-                <a class="navbar-brand waves-effects backtoprev hidden" href="#">
-                    <i class="material-icons fa-2x">chevron_left</i>
-                </a>
-
-                <!-- Collapse -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Links -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                <div class="container">
+          
+                  <!-- Brand -->
+                  <a class="navbar-brand waves-effects" href="#">
+                        CUSTOMERS
+                    </a>
+    
+                    <!-- Collapse -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+          
+                  <!-- Links -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto" id="mainMenu">
-                        <li>One</li>
-                        <li>Two</li>
+                        <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
 
-                    </ul>
-
-                    <!-- Right 
-                          <ul class="navbar-nav nav-flex-icons">
-                            <li class="nav-item">
-                              <a class="nav-link waves-effect">
-                                <span class="badge red z-depth-1 mr-1"> 1 </span>
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                              </a>
+                            <!-- Left -->
+                            <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                <a class="nav-link waves-effect" href="#">Home
+                                  <span class="sr-only">(current)</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link waves-effect" href="customers.html">Customers</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link waves-effect" href="orders.html">Orders</a>
                             </li>
-              
-                          </ul>-->
-
+                            </ul>
+                    
+                           
+                    
+                          </div>
+          
+                    </ul>
+          
+                  
+          
+                  </div>
+          
                 </div>
-
-            </div>
-        </nav>
+              </nav>
+              <!-- Navbar -->
+<!--Main layout-->
+    
         <!-- Navbar -->
         <!--Main layout-->
-        <main class="pt-5" style="margin-top:55px;">
+        <main class="mt-6">
             <div class="container-fluid mt-2">
 
 
@@ -157,29 +180,8 @@ a.list-group-item h5{
 
 
                 <!--Grid column-->
-                <div class="col-md-6 mb-4">
-                        <div class="list-group" id="list" role="tablist"></div>
-                    <div class="list-group" id="lists" role="tablist">
-                    <!--Card-->
-                    <div class="media">
-                        <img class="mr-3" src="img/faces/avatar.jpg" width="64" alt="Generic placeholder image">
-                        <div class="media-body">
-                          <h5 class="mt-0">Media heading</h5>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                      </div>
-
-                      <div class="media">
-                        <img class="mr-3" src="img/faces/avatar.jpg" width="64" alt="Generic placeholder image">
-                        <div class="media-body">
-                          <h5 class="mt-0">Media heading</h5>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                      </div>
-
-                    </div>
-                    <!--Card-->
-
+                <div class="col-md-6 mb-4 pl-0 pr-0">
+                    <div class="list-group" id="list" role="tablist"></div>
                 </div>
                 <!--Grid column-->
 
@@ -189,7 +191,7 @@ a.list-group-item h5{
 
                     <!--Card-->
 
-                 
+
 
                 </div>
                 <!--Grid column-->
@@ -197,7 +199,7 @@ a.list-group-item h5{
 
 
                 <!--Grid row-->
-            </div>
+
             </section>
             <!--Section: Products v.3-->
 
@@ -205,136 +207,89 @@ a.list-group-item h5{
         </main>
         <!--Main layout-->
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                
-                <a href="#" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
-                    <i class="fa fa-pencil"></i>
-                </a>
-            
-                <ul class="list-unstyled">
-                    <li><a class="btn-floating red waves-effect waves-light"><i class="fa fa-star"></i></a></li>
-                    <li><a class="btn-floating yellow darken-1 waves-effect waves-light"><i class="fa fa-user"></i></a></li>
-                    <li><a class="btn-floating green waves-effect waves-light"><i class="fa fa-envelope"></i></a></li>
-                    <li><a class="btn-floating blue waves-effect waves-light"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-            </div>
+
+            <a href="#" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
+                <i class="fa fa-pencil"></i>
+            </a>
+
+            <ul class="list-unstyled">
+                <li><a class="btn-floating red waves-effect waves-light"><i class="fa fa-star"></i></a></li>
+                <li><a class="btn-floating yellow darken-1 waves-effect waves-light"><i class="fa fa-user"></i></a></li>
+                <li><a class="btn-floating green waves-effect waves-light"><i class="fa fa-envelope"></i></a></li>
+                <li><a class="btn-floating blue waves-effect waves-light"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
         <!--Footer-->
         <footer class="page-footer text-center hidden font-small mt-4 wow fadeIn">
 
-            <!--Call to action-->
-            <div class="pt-4">
-                <a class="btn btn-info" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download
-                    MDB
-                    <i class="fa fa-download ml-2"></i>
-                </a>
-                <a class="btn btn-info " href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start
-                    free tutorial
-                    <i class="fa fa-graduation-cap ml-2"></i>
-                </a>
-            </div>
-            <!--/.Call to action-->
-
-            <hr class="my-4">
-    </div>
-
-    <!--Copyright-->
-    <div class="footer-copyright hidden py-3">
-        © 2018 Copyright:
-        > MDBootstrap.com </a>
-    </div>
-    <!--/.Copyright-->
+      
 
     </footer>
     <!--/.Footer-->
-    
-      <!-- Modal: modalCart -->
-      <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <!--Header-->
-                  <div class="modal-header">
-                     <h4 class="modal-title" id="myModalLabel"></h4>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">×</span>
-                     </button>
-                  </div>
-                  <!--
 
-                  
-                       <div class=" text-center">
-                         
+    <!-- Modal: modalCart -->
+    <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
 
+                <!--Body-->
+                <div class="modal-body">
 
-                            <input type='text' class="form-control" id='note' placeholder="note"><br>
-                            <input type='text' class="form-control" id='cname' placeholder="cname"><br>
-                            <input type='text' class="form-control" id='cat' placeholder="cat"><br>
-                            <input type='text' class="form-control" id='state' placeholder="state"><br>
-                            <input type='text' class="form-control" id='sku' placeholder="sku"><br>
-                            <input type='text' class="form-control" id='name' placeholder="name"><br>
-                            <input type='text' class="form-control" id='statecolor' placeholder="statecolor"><br>
-                            <input type='text' class="form-control" id='size' placeholder="size"><br>
-                            <input type='text' class="form-control" id='img' placeholder="img"><br>
-                            <input type='text' class="form-control" id='oldprice' placeholder="oldprice"><br>
-                            <input type='text' class="form-control" id='price' placeholder="price"><br>
-                            <input type='text' class="form-control" id='desc' placeholder="desc"><br>
-                            <input type='text' class="form-control" id='stock' placeholder="stock"><br>
-                            <input type='text' class="form-control" id='smname' placeholder="smname"><br>
-                            <input type='text' class="form-control" id='timestamp' placeholder="timestamp"><br>
-                            <button onclick='insertData()' id='submit'>Submit</button><br>
-                        </div>
-      
-                  -->
-                  <!--Body-->
-                  <div class="modal-body">
-                        
-                                <div class="container flex-center flex-column m-page scene_element scene_element--fadeinup mt-2">
-                                    <div class="row">
-                    
-                                        <div class="col-12 mb-lg-3 mt-2 mb-4">
-                                        
-                                                    <!-- Name -->
-                                                  <h3>Add Customer</h3>
-                                                    <form class="text-center" style="color: #757575;">
-                    
-                                                        <div class="form-row">
-                                                            <div class="col">
-                                                                <!-- First name -->
-                                                                <div class="md-form">
-                                                                    <input type="text" id="fname" class="form-control">
-                                                                    <label for="fname">First name</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col">
-                                                                <!-- Last name -->
-                                                                <div class="md-form">
-                                                                    <input type="text" id="lname" class="form-control">
-                                                                    <label for="lname">Last name</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                    
-                                                             <!-- Phone number -->
-                                                             <div class="md-form">
-                                                                <input type="number" id="phone" class="form-control"
-                                                                    aria-describedby="materialRegisterFormPhoneHelpBlock">
-                                                                <label for="phone">Phone number</label>
-                                                                <!--<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                    <div class="container flex-center flex-column m-page scene_element scene_element--fadeinup mt-2">
+                        <div class="row">
+
+                            <div class="col-12 mb-lg-3 mt-2 mb-4">
+
+                                <!-- Name -->
+                                <h3 class="tex">Add Customer</h3>
+                                <form class="text-center" style="color: #757575;">
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <!-- First name -->
+                                            <div class="md-form">
+                                                <input type="text" id="fname" class="form-control">
+                                                <label for="fname">First name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <!-- Last name -->
+                                            <div class="md-form">
+                                                <input type="text" id="lname" class="form-control">
+                                                <label for="lname">Last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone number -->
+                                    <div class="md-form">
+                                        <input type="number" id="phone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                                        <label for="phone">Phone number</label>
+                                        <!--<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                                                                     Optional - for two step authentication
                                                                 </small>-->
-                                                            </div>
-                                                        <!-- E-mail -->
-                                                        <div class="md-form mt-0">
-                                                                <input type="text" id="email" class="form-control">
-                                                                <label for="email">E-mail</label>
-                                                            </div>
-                        
-                                                        <!-- E-mail -->
-                                                        <div class="md-form mt-0">
-                                                            <input type="text" id="address" class="form-control">
-                                                            <label for="address">Address</label>
-                                                        </div>
-                    
-                                                        <!-- Password -->
-                                                      <!--  <div class="md-form">
+                                    </div>
+                                    <!-- E-mail -->
+                                    <div class="md-form mt-0">
+                                        <input type="text" id="email" class="form-control">
+                                        <label for="email">E-mail</label>
+                                    </div>
+
+                                    <!-- E-mail -->
+                                    <div class="md-form mt-0">
+                                        <input type="text" id="address" class="form-control">
+                                        <label for="address">Address</label>
+                                    </div>
+
+                                    <!-- Password -->
+                                    <!--  <div class="md-form">
                                                             <input type="password" id="materialRegisterFormPassword" class="form-control"
                                                                 aria-describedby="materialRegisterFormPasswordHelpBlock">
                                                             <label for="materialRegisterFormPassword">Password</label>
@@ -342,61 +297,47 @@ a.list-group-item h5{
                                                                 At least 8 characters and 1 digit
                                                             </small>
                                                         </div> -->
-                    
-                                                   
-                    
-                                                        <!-- Sign up button -->
-                                                      
-                                                      <button onclick="insertData()" id="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                                            type="submit">Save</button>
-                    
-                                                        <!-- Social register -->
-                                                      <!--  <p>or sign up with:</p>
-                    
-                                                        <a type="button" class="btn-floating btn-fb btn-sm">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                        <a type="button" class="btn-floating btn-tw btn-sm">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                        <a type="button" class="btn-floating btn-li btn-sm">
-                                                            <i class="fa fa-linkedin"></i>
-                                                        </a>
-                                                        <a type="button" class="btn-floating btn-git btn-sm">
-                                                            <i class="fa fa-github"></i>
-                                                        </a> -->
-                    
-                                                        <hr>
-                    
-                                                        <!-- Terms of service -->
-                                                        <p>By clicking
-                                                            <em>Sign up</em> you agree to our
-                                                            <a href="" target="_blank">terms of service</a> and
-                                                            <a href="" target="_blank">terms of service</a>. </p>
-                    
-                                                    </form>
-                                                    <!-- Form -->
-                                           
-                    
-                                        </div>
-                    
-                    
-                                    </div>
-                                   
-                    
+
+
+
+                                    <!-- Sign up button -->
+
+                                    <button onclick="insertData()" id="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                        type="submit">Save</button>
+
+
+                                    <hr>
+
+                                    <!-- Terms of service -->
+                                    <p>By clicking
+                                        <em>Sign up</em> you agree to our
+                                        <a href="" target="_blank">terms of service</a> and
+                                        <a href="" target="_blank">terms of service</a>. </p>
+
+                                </form>
+                                <!-- Form -->
+
+
                             </div>
-                             
-                        
-                  </div>
-                  <!--Footer-->
-                 <!-- <div class="modal-footer">
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <!--Footer-->
+                <!-- <div class="modal-footer">
                      <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
                      <button class="btn btn-primary">Checkout</button>
                   </div>-->
-               </div>
             </div>
-         </div>
-         <!-- Modal: modalCart -->
+        </div>
+    </div>
+    </div>
+    <!-- Modal: modalCart -->
     <!-- Script -->
     <script type="text/javascript" src="cordova.js"></script>
 

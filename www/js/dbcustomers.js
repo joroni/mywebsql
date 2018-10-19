@@ -39,39 +39,37 @@
                   var email = result.rows.item(i).email;
                   var address = result.rows.item(i).address;
 
-                  /* var ul = document.getElementById("list").getElementsByTagName("UL")[0];
-                   for (var i=0; i<len; i++){
-                       var str = "Row = " + i + " ID = " + note + " Data =  " +sku;
-                       str = str.replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/'/g, "&apos;").replace(/"/g, "&quot;"); // entity encode
-                       ul.innerHTML += "<li>" + str + "</li>";
-                   }*/
+             
                   // Add list item
                     var div = document.getElementById("list");
                     var a = document.createElement("a");
                     a.classList = "list-group-item list-group-item-action";
                     var div1 = document.createElement("div");
-                    div1.classList = "media";
-                   // div.append(div)
+                
+                    a.appendChild(div1);
                     var img = document.createElement("img");
-                    img.classList = "mr-3";
+                    img.classList = "mr-3 img-circle";
+                   div1.appendChild(img);                  
                     var div2 = document.createElement("div");
-                    a.appendChild(div2);
-                    div2.classList = "media-body";
-a.appendChild(div1);
+                
+                   div2.classList = "media";
+                    
                     img.src = "img/faces/avatar.jpg";
-                   var h5 = document.createElement("h5");
-                  div2.appendChild(h5);
-                  var p = document.createElement("p");
+                  
                   div2.appendChild(img);
                   a.appendChild(div2);
-                  // img.appendChild(document.createTextNode('src="img/faces/avatar.jpg"'));
-
-                  div2.appendChild(h5);
+                  var div3  = document.createElement("div");
+                  div3.classList = "media-body";
+                  div2.appendChild(div3);
+                  var h5 = document.createElement("h5");
+                    var p = document.createElement("p");
+                  div3.appendChild(h5);
+                  div3.appendChild(p)
+                
                   h5.appendChild(document.createTextNode(fname + ' ' + lname));
                   p.appendChild(document.createTextNode(phone));
                   // p.appendChild(document.createTextNode(email));
                   //p.appendChild(document.createTextNode(address));
-                  div2.appendChild(p)
                   div.appendChild(a);
 
 
