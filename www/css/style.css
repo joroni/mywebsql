@@ -1,0 +1,453 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/iconfont/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(../fonts/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+        url(../fonts/iconfont/MaterialIcons-Regular.woff) format('woff'),
+        url(../fonts/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+ /*   font-size: 24px;*/
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.cards.productsonsale .btn-number {
+    width: 25px !important;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 3px;
+    margin-top:3px;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0;
+    position: relative;
+    padding-bottom: 0;
+    margin-right: 1rem;
+    top: 0.32rem;
+    left: -10px;
+    font-size: 1.12rem !important;
+    line-height: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+main {
+    margin-top: 60px;
+}
+
+
+
+.qtty-center {
+    max-width: 150px;
+    margin: 10px auto;
+}
+
+
+body.storegroup h5,
+body.customer-list h5,
+body.customer-list .h5,
+body.storegroup .h5 {
+    font-size: 1rem;
+}
+
+body.storegroup p,
+body.customer-list p {
+    font-size: 0.8rem;
+}
+
+
+.no-gutter {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cards.productsonsale {
+    border: 1px solid #eee;
+    height: 270px;
+    background: #fff;
+}
+
+.cards.productsonsale .card-body {
+    padding: 5px;
+}
+
+.cards.productsonsale .h4,
+.cards.productsonsale h4 {
+    font-size: 1.0rem;
+}
+
+
+.cards.productsonsale input.form-control.input-number {
+    height: 30px;
+    font-size: 12px;
+    padding: 0;
+    background:#fff;
+    max-width: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.cards.productsonsale .btn .fa {
+    position: relative;
+    font-size: .5rem;
+}
+
+
+.grey-border {
+    background-color: #fff!important;
+    border: 0px solid #888 !important;
+}
+
+.cards.productsonsale .h5,
+.cards.productsonsale h5 {
+    font-size: 1rem !important;
+    font-weight: 400;
+}
+
+
+del {
+    color:#8a8a8a;
+}
+
+.parent{
+    width:120px;
+}
+.truncate {
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.truncate-list {
+   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input-number {
+    text-align: center;
+}
+
+
+.cards.productsonsale .card-img-top {
+    height: 90px;
+    width: auto;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    margin: 0 auto;
+}
+
+.fixed-action-btn {
+    position: fixed;
+    z-index: 998;
+    right: 35px;
+    bottom: 35px;
+    margin-bottom: 0;
+    padding-top: 15px;
+}
+
+.btn-floating {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    width: 47px;
+    height: 47px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-floating.btn-lg i {
+    font-size: 1.625rem;
+    line-height: 61.1px;
+}
+
+.fixed-action-btn ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: .4s height;
+    -o-transition: .4s height;
+    transition: .4s height;
+    position: absolute;
+    bottom: 64px;
+    height: 64px;
+    left: 0;
+    right: 0;
+    margin: 0 0 15px;
+    padding: 0;
+    text-align: center;
+}
+
+.fixed-action-btn ul li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+}
+
+.fixed-action-btn ul a.btn-floating {
+    opacity: 0;
+    -webkit-transition-duration: .4s;
+    -o-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: scale(.4) translate(0);
+    -ms-transform: scale(.4) translate(0);
+    transform: scale(.4) translate(0);
+}
+
+.btn-floating i {
+    display: inline-block;
+    width: inherit;
+    text-align: center;
+    color: #fff;
+}
+
+.btn-floating i {
+    font-size: 1.25rem;
+    line-height: 47px;
+}
+
+.btn-floating.btn-lg {
+    width: 61.1px;
+    height: 61.1px;
+}
+
+
+
+.fixed-top {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.card-profile {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.trans {
+    background-color: transparent !important;
+    background: none;
+}
+
+.noshadow {
+
+    box-shadow: none !important;
+
+}
+
+.closealamodal {
+    color: #ddd !important;
+    position: fixed !important;
+    left: 15px;
+    top: 15px;
+    
+
+}
+
+
+
+.prod-page-image  {
+    height: 200px;
+    width: auto;
+}
+
+
+
+.centered  {
+    text-align: center !important;
+}
+
+button, .button{
+    margin: 0 !important;
+}
+
+
+.circled {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 7px 6px 4px 6px;
+    background: #A8A8A8;
+    /* border-radius: 50%; */
+    color: #fff !important;
+}
+
+.cart:before {
+    border-color: none !important;
+    border-left-color:transparent !important;
+    border-width:0px  !important;
+    margin-top: -27px e !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.total {
+    font-weight: 600;
+    font-size:1.3em;
+}
+
+.modal-dialog {
+    margin: 0;
+    height:100%;
+}
+
+.modal-content {
+    height: 100%;
+}
+
+.badge:empty {
+    display: inline-block;
+    height: 15px;
+    opacity: 0;
+}
+
+h5.category{
+    font-size: 0.8em !important;
+}
+
+
+.h-40 {
+    height: 40px !important;
+} 
+
+.btn-blue-grey.lighten-5 {
+    background-color: #eceff1!important;
+    background:#eceff1!important;
+    color: #212529 !important
+}
+
+
+
+.cart .price {
+    display: block;
+    float: left;
+  }
+  .cart #total {
+    height: auto !important;
+    background:transparent;
+    color: #333;
+    font-size: 1em;
+  }
+  .cart .title {
+      color: #25A187;
+      padding-left: 0px;
+      float: left;
+      font-size: 14px;
+  }
+
+
+
+  .quant-btn-group {
+      width:100%;
+  }
+  .quant-btn-group .btn-toggle {
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 28px !important;
+    float: none;
+  }
+
+
+  .modal-header .close {
+    padding: 0;
+}
+
+.modal-header {
+    padding: .5rem 1rem;
+    border-bottom: 0px solid #e9ecef;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+.total-row td, #total.right {
+    background:rgba(3, 169, 244, 0.1) !important;
+}
+
+.cart .price {
+    display: block;
+    float: left;
+    color: #333;
+    font-weight: 500;
+}
+  .cart #total {
+    height: auto !important;
+    background:transparent;
+    color: #333;
+    font-size: 1em;
+  }
+  .cart .title {
+      color: #25A187;
+      padding-left: 0px;
+      float: left;
+      font-size: 14px;
+  }
+  .btn-blue-grey.lighten-5 {
+    background-color: #eceff1!important;
+    background: #eceff1!important;
+    color: #212529 !important;
+    height: 40px;
+}
+
+
+
+

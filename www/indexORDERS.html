@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+    <title>PhoneGap App</title>
+
+</head>
+<body>
+    <input type='text' id='note' placeholder="note" >
+    <input type='text' id='cname' placeholder="cname" >
+    <input type='text' id='cat'  placeholder="cat" >
+    <input type='text' id='state'  placeholder="state" >
+    <input type='text' id='statecolor'  placeholder="statecolor" >
+    <input type='text' id='size'  placeholder="size" >
+    <input type='text' id='img'  placeholder="img" >
+    <input type='text' id='oldprice'  placeholder="oldprice" >
+    <input type='text' id='price'  placeholder="price" >
+    <input type='text' id='desc'  placeholder="desc" >
+    <input type='text' id='stock'  placeholder="stock" >
+    <input type='text' id='smname'  placeholder="smname" >
+    <input type='text' id='timestamp'  placeholder="timestamp" >
+    <button onclick='insertData()' id='submit'>Submit</button><br>
+    <ul id='list'></ul>
+
+    <!-- Script -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+
+        // window.openDatabase("database-name","version","database description","database size in bytes")
+        var db = window.openDatabase("super8", "1.0", "purchase order database", 1000000); //will create database tutorialdb or open it
+      	document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function onDeviceReady() {
+
+            // Create Table
+            db.transaction(populateDB, errorCB, successCB);
+
+            // Select records
+            fetchData();
+		}
+
+        function populateDB(tx){
+          //  tx.executeSql('CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT,order TEXT NOT NULL)');
+            //tx.executeSql('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,cname TEXT NOT NULL)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, note TEXT NULL sku TEXT NULL,'+
+'name TEXT NULL, cat TEXT NULL, state TEXT NULL, statecolor TEXT NULL, size TEXT NULL, img TEXT NULL, oldprice TEXT NULL, price TEXT NULL, desc TEXT NULL, stock TEXT NULL,'+
+'cname TEXT NULL, smname TEXT NULL, timestamp TEXT NULL )');
+        }
+
+        // Fetch all records
+        function fetchData(){
+            db.transaction(function(tx){
+                
+				tx.executeSql("select * from orders",[],function(tx1,result){
+					var len = result.rows.length;
+					
+					for (var i=0; i<len; i++){
+                        var order = result.rows.item(i).order;
+
+                        // Add list item
+                        var ul = document.getElementById("list");
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode(order));
+                        ul.appendChild(li);
+                    }
+					
+				},errorCB);
+			}, errorCB, successCB);
+        }
+     
+        function insertData(){
+
+            // Insert record
+            db.transaction(insertNote, errorCB, successCB);
+        }
+
+        function insertNote(tx){
+            var order = document.getElementById('order').value;
+            
+            // Insert query
+            tx.executeSql("INSERT INTO orders(order) VALUES (?)",[order]);
+            
+            // Append new list item
+            var ul = document.getElementById("list");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(order));
+            ul.appendChild(li);
+        }
+
+        function errorCB(err) {
+            alert("Error processing SQL: "+err.code);
+        }
+
+        function successCB() {
+        //    alert("success!");
+        console.log("DB Success!");
+        }
+        
+    </script>
+</body>
+</html>
+
