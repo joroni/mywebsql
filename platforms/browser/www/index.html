@@ -63,10 +63,32 @@ a.list-group-item h5{
     border-radius: 50%;
 }
 
-.media-body {
-    -ms-flex: 1;
-    flex: 1;
+
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.media-body > div {
+    position: absolute;
+    width: 100px;
+    right: 5px;
+    bottom: 15px;
+    padding-top: 10px;
+}
+
+button.btn.btn-info.btn-editar, button.btn.btn-info.btn-eliminar {
+    width: 40px;
+    padding: 5px 10px;
+}
+
+a.list-group-item.list-group-item-action {
     text-align: left;
+    padding-right: 50px;
 }
 </style>
 </head>
@@ -216,7 +238,7 @@ a.list-group-item h5{
         <!--Main layout-->
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 
-            <a href="#" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
+            <a href="#" id="btnNew" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
                 <i class="fa fa-pencil"></i>
             </a>
 
@@ -256,8 +278,8 @@ a.list-group-item h5{
                             <div class="col-12 mb-lg-3 mt-2 mb-4">
 
                                 <!-- Name -->
-                                <h3 class="tex">Add Customer</h3>
-                                <form class="text-center" style="color: #757575;">
+                                <h3 class="tex" id="modal-Title">Add Customer</h3>
+                                <form class="text-center" id="dynamic-form" style="color: #757575;">
                                     
                                     <div class="form-row">
                                             <input type="hidden" id="txt-id" readonly class="form-control">
@@ -345,6 +367,11 @@ a.list-group-item h5{
             </div>
         </div>
     </div>
+
+
+
+
+
     </div>
     <!-- Modal: modalCart -->
     <!-- Script -->
