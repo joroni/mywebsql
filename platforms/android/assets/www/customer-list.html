@@ -26,7 +26,9 @@
         .h3, h3 {
    font-size: 1.17em;
 }
-
+.showData{
+    display: none;
+}
 a.list-group-item.list-group-item-action {
     text-align: left;
 }
@@ -60,6 +62,12 @@ a.list-group-item h5{
 .img-circle {
     border-radius: 50%;
 }
+
+.media-body {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: left;
+}
 </style>
 </head>
 
@@ -88,7 +96,7 @@ a.list-group-item h5{
           
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto" id="mainMenu">
-                        <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
+                        <div class="navbar-collapse collapse" id="navbarSupportedContent">
 
                             <!-- Left -->
                             <ul class="navbar-nav mr-auto">
@@ -98,7 +106,7 @@ a.list-group-item h5{
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link waves-effect" href="customers.html">Customers</a>
+                                <a class="nav-link waves-effect" href="customer-list.html">Customers</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link waves-effect" href="orders.html">Orders</a>
@@ -181,7 +189,7 @@ a.list-group-item h5{
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4 pl-0 pr-0">
-                    <div class="list-group" id="list" role="tablist"></div>
+                    <div class="list-group" id="li-integrantes" role="tablist"></div>
                 </div>
                 <!--Grid column-->
 
@@ -250,8 +258,9 @@ a.list-group-item h5{
                                 <!-- Name -->
                                 <h3 class="tex">Add Customer</h3>
                                 <form class="text-center" style="color: #757575;">
-
+                                    
                                     <div class="form-row">
+                                            <input type="hidden" id="txt-id" readonly class="form-control">
                                         <div class="col">
                                             <!-- First name -->
                                             <div class="md-form">
@@ -302,7 +311,7 @@ a.list-group-item h5{
 
                                     <!-- Sign up button -->
 
-                                    <button id="addCustomer" id="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                    <button id="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
                                         type="submit">Save</button>
 
 
@@ -357,7 +366,7 @@ a.list-group-item h5{
     <script src='js/lodash.min.js'></script>
     <script src='js/spin.min.js'></script>
     <script src='js/ladda.min.js'></script>
-    <script type="text/javascript" src="js/dbcustomers.js"></script>
+    <script type="text/javascript" src="js/customer-list.js"></script>
 
 
 

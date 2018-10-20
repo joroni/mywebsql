@@ -81,10 +81,20 @@
       }, errorCB, successCB);
   }
 
+
+
   function insertData() {
 
       // Insert record
       db.transaction(insertNote, errorCB, successCB);
+  }
+
+
+  function shortName(){
+    var name = document.getElementById('fname').value;
+    var lastname =  document.getElementById('lname').value;
+    var initials = name.charAt(0)+""+lastname.charAt(0);
+      document.getElementById("name").innerHTML = initials;
   }
 
   function insertNote(tx) {
@@ -124,3 +134,23 @@ Submit*/
       document.getElementById('fname').innerHTML = '';
       //alert("success!");
   }
+
+
+
+
+
+  
+
+
+  $("#addCustomer").click(function(e){
+    e.stopPropagation();
+    insertData();
+  })
+
+
+
+
+
+
+
+  
