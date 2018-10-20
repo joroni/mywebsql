@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="vendor/csstricks/assets/css/keyframes.css">
+    <link rel="stylesheet" href="vendor/csstricks/assets/css/pageTransitions.css">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/nifonts.css">
+
+    <style>
+        .h3, h3 {
+   font-size: 1.17em;
+}
+</style>
+</head>
+
+<body>
+
+        <body class="customer-add m-scene" id="main">
+
+                <div class="m-page scene_element scene_element--fadeinleft">
+                   <!-- Navbar -->
+               <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling">
+                    <div class="container">
+              
+                      <!-- Brand -->
+                      <a class="navbar-brand waves-effects backtoprev hidden" href="#">
+                        <i class="material-icons fa-2x">chevron_left</i>
+                      </a>
+              
+                      <!-- Collapse -->
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+              
+                      <!-- Links -->
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto" id="mainMenu">
+                            <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
+
+                                <!-- Left -->
+                                <ul class="navbar-nav mr-auto">
+                                  <li class="nav-item active">
+                                    <a class="nav-link waves-effect" href="#">Home
+                                      <span class="sr-only">(current)</span>
+                                    </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link waves-effect" href="customer-list.html">Customers</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link waves-effect" href="orders.html">Orders</a>
+                                </li>
+                                </ul>
+                        
+                               
+                        
+                              </div>
+              
+                        </ul>
+              
+                        <!-- Right 
+                          <ul class="navbar-nav nav-flex-icons">
+                            <li class="nav-item">
+                              <a class="nav-link waves-effect">
+                                <span class="badge red z-depth-1 mr-1"> 1 </span>
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                              </a>
+                            </li>
+              
+                          </ul>-->
+              
+                      </div>
+              
+                    </div>
+                  </nav>
+                  <!-- Navbar -->
+    <!--Main layout-->
+    <main class="pt-5" style="margin-top:55px;">
+        <div class="container-fluid mt-2">
+
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark hidden mdb-color lighten-3 mt-3 mb-5">
+
+                <!-- Navbar brand -->
+                <span class="navbar-brand">Categories:</span>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">All
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shirts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sport wears</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Outwears</a>
+                        </li>
+
+                    </ul>
+                    <!-- Links -->
+
+                    <form class="form-inline">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <!--/.Navbar-->
+        </div>
+        <!--Section: Products v.3-->
+
+
+        <section class="text-center mb-4">
+
+
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+                    <div class="list-group" id="list" role="tablist"></div>
+                <!--Card-->
+
+                <div class="card">
+
+                    <!--Card content-->
+                    <div class="card-body text-center">
+
+
+                       
+
+
+                    </div>
+                    <!--Card content-->
+
+                </div>
+                <!--Card-->
+
+            </div>
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4 ">
+
+                <!--Card-->
+
+                <div class="card">
+
+                    <!--Card content-->
+                    <div class="card-body text-center">
+                        <!--Category & Title-->
+
+
+                        <input type='text' class="form-control" id='note' placeholder="note"><br>
+                        <input type='text' class="form-control" id='cname' placeholder="cname"><br>
+                        <input type='text' class="form-control" id='cat' placeholder="cat"><br>
+                        <input type='text' class="form-control" id='state' placeholder="state"><br>
+                        <input type='text' class="form-control" id='sku' placeholder="sku"><br>
+                        <input type='text' class="form-control" id='name' placeholder="name"><br>
+                        <input type='text' class="form-control" id='statecolor' placeholder="statecolor"><br>
+                        <input type='text' class="form-control" id='size' placeholder="size"><br>
+                        <input type='text' class="form-control" id='img' placeholder="img"><br>
+                        <input type='text' class="form-control" id='oldprice' placeholder="oldprice"><br>
+                        <input type='text' class="form-control" id='price' placeholder="price"><br>
+                        <input type='text' class="form-control" id='desc' placeholder="desc"><br>
+                        <input type='text' class="form-control" id='stock' placeholder="stock"><br>
+                        <input type='text' class="form-control" id='smname' placeholder="smname"><br>
+                        <input type='text' class="form-control" id='timestamp' placeholder="timestamp"><br>
+                        <button onclick='insertData()' id='submit'>Submit</button><br>
+                    </div>
+                    <!--Card content-->
+
+                </div>
+                <!--Card-->
+
+            </div>
+            <!--Grid column-->
+
+
+
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Products v.3-->
+
+
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <!--Call to action-->
+        <div class="pt-4">
+            <a class="btn btn-info" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download
+                MDB
+                <i class="fa fa-download ml-2"></i>
+            </a>
+            <a class="btn btn-info " href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start
+                free tutorial
+                <i class="fa fa-graduation-cap ml-2"></i>
+            </a>
+        </div>
+        <!--/.Call to action-->
+
+        <hr class="my-4">
+</div>
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2018 Copyright:
+            <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+    <!-- Script -->
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+    <script src='js/lodash.min.js'></script>
+    <script src='js/spin.min.js'></script>
+    <script src='js/ladda.min.js'></script>
+    <script type="text/javascript" src="js/dbrecords.js"></script>
+
+
+
+
+    <script src="js/cart.js"></script>
+    <script src="vendor/csstricks/assets/js/jquery.smoothState.min.js"></script>
+
+    <!--<script type="text/javascript" src="js/customer.js"></script>-->
+    <!-- Initializations -->
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+        // SideNav Button Initialization
+        // $(".button-collapse").sideNav();
+        // SideNav Scrollbar Initialization
+        //var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+        //Ps.initialize(sideNavScrollbar);
+    </script>
+</body>
+
+</html>

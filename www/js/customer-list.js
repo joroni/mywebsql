@@ -47,6 +47,7 @@ $(document).ready(function () {
     $('#li-integrantes').on("click", ".btn-editar", function () {
         var idIntegrante = $(this).data("id");
         consultarIntegrante(idIntegrante);
+        $("label").toggleClass("hidden");
     });
 
     $('#li-integrantes').on("click", ".btn-eliminar", function () {
@@ -78,13 +79,13 @@ function listarIntegrantes() {
 
 
                   
-                 lisHtml += '<a clasz="list-group-item list-group-item-action"><div class="media">'+
-                 '<a href="#" class="icon-btn toggleTools toggleTools'+ integrante.ID+'"><i class="material-icons fa-2x">more_vert</i></a>'+
+                 lisHtml += '<a class="list-group-item list-group-item-action"><div class="media">'+
+                 '<div href="#" class="icon-btn toggleTools" id="toggleTools'+ integrante.ID+'"><i class="material-icons fa-2x">more_vert</i></div>'+
                             '<img src="img/faces/avatar.jpg"  class="mr-3 img-circle" width="64" alt="Sample Image">'+
                  
                    '<div class="media-body"><h5 class="mt-0">' + integrante.NOMBRES + ' ' + integrante.APELLIDOS +'</h5><p> ' + integrante.ID +'</p><div class="showData tools" id="tools'+ integrante.ID+'">'+
                         '<button class="btn btn-info btn-editar" data-toggle="modal" data-target="#modalCart" type="button" data-id="' + id + '"><i class="material-icons">edit</i></button>' +
-                        '<button class="btn btn-info btn-eliminar" type="button" data-id="' + id + '"><i class="material-icons">close</i></Eliminar></div></div></div><hr>';
+                        '<button class="btn btn-info btn-eliminar" type="button" data-id="' + id + '"><i class="material-icons">close</i></Eliminar></div></div></div>';
                
                        
                     }
@@ -110,7 +111,7 @@ function guardarIntegrante(integrante) {
         tx.executeSql('INSERT INTO INTEGRANTE(ID, NOMBRES, APELLIDOS) VALUES(?, ?, ?)', [integrante.id, integrante.nombres, integrante.apellidos]);
     }, error, function () {
         alert("Item Saved.");
-        $(".close").trigger("click");
+        $(".close").trigger()
       /*  $("#modalCart").css("display","none");
         $("#modalCart, .modal-backdrop").removeClass("show");
         $("body").removeClass("modal-open");*/
