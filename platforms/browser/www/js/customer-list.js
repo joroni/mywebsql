@@ -17,9 +17,12 @@ $(document).ready(function () {
         var txtId = $('#txt-id');
         var txtFname = $('#fname');
         var txtLname = $('#lname');
+        var txtPhone = $('#phone');
+        var txtEmail = $('#email');
+
         var input = $('input');
 
-        if (txtFname.val() === '' || txtLname.val() === '') {
+        if (txtFname.val() === '' || txtLname.val() === ''  || txtPhone.val() === '' || txtEmail.val() === '') {
             alert("All fields are Required...");
             return;
         }
@@ -28,19 +31,25 @@ $(document).ready(function () {
 
         integrante.fname = txtFname.val();
         integrante.lname = txtLname.val();
+        integrante.phone = txtPhone.val();
+        integrante.email = txtEmail.val();
+      
+        
 
         if (txtId.val() === '') { //Lo guarda
             integrante.id = new Date().getTime();
-            guardarIntegrante(integrante);
+            saveMember(integrante);
         } else { //Lo actualiza
             integrante.id = parseInt(txtId.val());
-            actualizarIntegrante(integrante);
+            updateMember(integrante);
         }
 
         memberList();
 
         txtFname.val(null);
         txtLname.val(null);
+        txtPhone.val(null);
+        txtEmail.val(null);
         txtId.val(null);
     });
 
@@ -48,7 +57,7 @@ $(document).ready(function () {
     
     $('#li-integrantes').on("click", ".btn-user-info", function () {
         var idMember = $(this).data("id");
-        consultarIntegrante(idMember);
+        selectMember(idMember);
         $("label").addClass("active");
         //$("#modal-Title").html("View Customer");
 
@@ -57,7 +66,7 @@ $(document).ready(function () {
 
     $('#li-integrantes').on("click", ".btn-editar", function () {
         var idMember = $(this).data("id");
-        consultarIntegrante(idMember);
+        selectMember(idMember);
         $("label").addClass("active");
         $("#modal-Title").html("Edit Customer");
 
@@ -76,13 +85,13 @@ $(document).ready(function () {
 ////////////////////////////////////////////////////////////////////
 function init() {
     db.transaction(function (tx) {
-        tx.executeSql('create table if not exists INTEGRANTE(ID, NOMBRES, APELLIDOS)');
+        tx.executeSql('create table if not exists CUSTOMERS(ID, FNAMES, LNAMES,PHONE, EMAIL)');
     }, error, exito);
 }
 
 function memberList() {
     db.readTransaction(function (t) {
-        t.executeSql('SELECT ID, NOMBRES, APELLIDOS FROM INTEGRANTE', [], function (t, rs) {
+        t.executeSql('SELECT ID, FNAMES, LNAMES, PHONE, EMAIL FROM CUSTOMERS', [], function (t, rs) {
             if (rs.rows.length > 0) {
                 var lisHtml = '';
 
@@ -92,11 +101,11 @@ function memberList() {
 
 
 
-                    lisHtml += '<a class="list-group-item list-group-item-action"><div class="media">' +
-                        '<div href="#"  data-toggle="class" data-target="#tools' + integrante.ID + '" class="icon-btn toggleTools" id="toggleTools' + integrante.ID + '"><i class="material-icons fa-2x">more_vert</i></div>' +
-                        '<img src="img/user.svg"  class="mr-3  btn-user-info img-circle" width="64" alt="Sample Image">' +
+                    lisHtml += '<div class="list-group-item customer-list list-group-item-action"><div class="media">' +
+                        '<div href="#" data-toggle="class" data-target="#tools' + integrante.ID + '" class="icon-btn toggleTools" id="toggleTools' + integrante.ID + '"><i class="material-icons fa-2x">more_vert</i></div>' +
+                        '<a href="#" onclick="viewMember('+ id +')"><img src="img/user.svg" class="mr-3 btn-user-info img-circle" width="64" alt="Sample Image" /></a>' +
 
-                        '<div class="media-body"><h5 class="mt-0">' + integrante.NOMBRES + ' ' + integrante.APELLIDOS + '</h5><p> ' + integrante.ID + '</p><div id="tools' + integrante.ID + '" class="showData edittool">' +
+                        '<div class="media-body"><h5 class="mt-0">' + integrante.FNAMES + ' ' + integrante.LNAMES + '</h5><p> ' + integrante.PHONE + '</p><div id="tools' + integrante.ID + '" class="showData edittool">' +
                         '<button class="btn btn-info btn-editar" data-toggle="modal" data-target="#modalCart" type="button" data-id="' + id + '"><i class="material-icons">edit</i></button>' +
                         '<button class="btn btn-info btn-eliminar" type="button" data-id="' + id + '"><i class="material-icons">delete</i></Eliminar></div></div></div>';
 
@@ -127,7 +136,7 @@ function memberList() {
                     console.log("reset fields");
                     $('#dynamic-form')[0].reset();
                     $('#txt-id').val("");
-                      $("#modal-Title").html("Add Customer");
+                    $("#modal-Title").html("Add Customer");
 
                 })
 
@@ -139,44 +148,74 @@ function memberList() {
     });
 }
 
-function guardarIntegrante(integrante) {
+function saveMember(integrante) {
     db.transaction(function (tx) {
-        tx.executeSql('INSERT INTO INTEGRANTE(ID, NOMBRES, APELLIDOS) VALUES(?, ?, ?)', [integrante.id, integrante.fname, integrante.lname]);
+        tx.executeSql('INSERT INTO CUSTOMERS(ID, FNAMES, LNAMES, PHONE, EMAIL) VALUES(?, ?, ?,?,?)', [integrante.id, integrante.fname, integrante.lname, integrante.phone, integrante.email]);
     }, error, function () {
         alert("Item Saved.");
         $(".close").trigger();
     });
 }
 
-function consultarIntegrante(idMember) {
+function selectMember(idMember) {
     db.readTransaction(function (t) {
-        t.executeSql('SELECT ID, NOMBRES, APELLIDOS FROM INTEGRANTE WHERE ID = ?', [idMember], function (t, rs) {
+        t.executeSql('SELECT ID, FNAMES, LNAMES , PHONE, EMAIL FROM CUSTOMERS WHERE ID = ?', [idMember], function (t, rs) {
             if (rs.rows.length > 0) {
                 var integrante = new Object();
-                integrante.fname = rs.rows.item(0).NOMBRES;
-                integrante.lname = rs.rows.item(0).APELLIDOS;
+                integrante.fname = rs.rows.item(0).FNAMES;
+                integrante.lname = rs.rows.item(0).LNAMES;
+                integrante.phone = rs.rows.item(0).PHONE;
+                integrante.email = rs.rows.item(0).EMAIL;
                 $('#txt-id').val(rs.rows.item(0).ID);
-                $('#fname').val(rs.rows.item(0).NOMBRES);
-                $('#lname').val(rs.rows.item(0).APELLIDOS);
-
+                $('#fname').val(rs.rows.item(0).FNAMES);
+                $('#lname').val(rs.rows.item(0).LNAMES);
+                $('#phone').val(rs.rows.item(0).PHONE);
+                $('#email').val(rs.rows.item(0).EMAIL);
+              
+//console.log($(this).attr([id]));
             }
         }, error);
     });
 }
 
-function actualizarIntegrante(integrante) {
+
+
+
+function viewMember(idMember) {
+    localStorage.setItem("idMember",idMember);
+    alert(idMember);
+    db.readTransaction(function (t) {
+        t.executeSql('SELECT ID, FNAMES, LNAMES , PHONE, EMAIL FROM CUSTOMERS WHERE ID = ?', [idMember], function (t, rs) {
+            if (rs.rows.length > 0) {
+                var integrante = new Object();
+                integrante.fname = rs.rows.item(0).FNAMES;
+                integrante.lname = rs.rows.item(0).LNAMES;
+                integrante.phone = rs.rows.item(0).PHONE;
+                integrante.email = rs.rows.item(0).EMAIL;
+                $('#txt-id').val(rs.rows.item(0).ID);
+                $('#fname').val(rs.rows.item(0).FNAMES);
+                $('#lname').val(rs.rows.item(0).LNAMES);
+                $('#phone').val(rs.rows.item(0).PHONE);
+                $('#email').val(rs.rows.item(0).EMAIL);
+              //console.log($(this).attr([id]));
+            }
+        }, error);
+    });
+}
+
+function updateMember(integrante) {
     db.transaction(function (tx) {
-        tx.executeSql('UPDATE INTEGRANTE SET NOMBRES = ?, APELLIDOS = ? WHERE ID = ?', [integrante.fname, integrante.lname, integrante.id]);
+        tx.executeSql('UPDATE CUSTOMERS SET FNAMES = ?, LNAMES = ?, PHONE = ?, EMAIL = ?, WHERE ID = ?', [integrante.phone,integrante.fname,integrante.lname, integrante.id]);
     }, error, function () {
-        alert("El integrante ha sido actualizado con éxito");
+        alert("The member has been updated successfully");
     });
 }
 
 function removeMember(idMember) {
     db.transaction(function (tx) {
-        tx.executeSql('DELETE FROM INTEGRANTE WHERE ID = ?', [idMember]);
+        tx.executeSql('DELETE FROM CUSTOMERS WHERE ID = ?', [idMember]);
     }, error, function () {
-        alert("El integrante ha sido eliminado con éxito");
+        alert("The member has been rem successfully");
     });
 }
 
@@ -191,5 +230,5 @@ var error = function (err) {
 };
 
 var exito = function () {
-    console.info("Tabla creada...");
+    console.info("Tabla created...");
 };

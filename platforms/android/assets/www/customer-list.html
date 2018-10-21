@@ -22,53 +22,7 @@
 
     <link rel="stylesheet" href="css/nifonts.css">
 
-    <style>
-        .h3, h3 {
-   font-size: 1.17em;
-}
-.showData{
-    display: none;
-}
-a.list-group-item.list-group-item-action {
-    text-align: left;
-}
-
-a.list-group-item h5{
-    font-weight: 500;
-}
-
-
-
-a.list-group-item h5{
-    font-weight: 500;
-}
-
-
-#list img {
-    width: 64px;
-}
-.navbar-brand {
-    display: inline-block;
-    padding-top: 0;
-    position: relative;
-    padding-bottom: 0;
-    margin-right: 1rem;
-    top: 0.32rem;
-    left: 0px;
-    font-size: 1.12rem !important;
-    line-height: inherit;
-}
-
-.img-circle {
-    border-radius: 50%;
-}
-
-.media-body {
-    -ms-flex: 1;
-    flex: 1;
-    text-align: left;
-}
-</style>
+   
 </head>
 
 
@@ -216,7 +170,7 @@ a.list-group-item h5{
         <!--Main layout-->
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 
-            <a href="#" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
+            <a href="#" id="btnNew" class="btn-floating btn-lg red waves-effect waves-light" data-toggle="modal" data-target="#modalCart">
                 <i class="fa fa-pencil"></i>
             </a>
 
@@ -256,8 +210,8 @@ a.list-group-item h5{
                             <div class="col-12 mb-lg-3 mt-2 mb-4">
 
                                 <!-- Name -->
-                                <h3 class="tex">Add Customer</h3>
-                                <form class="text-center" style="color: #757575;">
+                                <h3 class="tex" id="modal-Title">Add Customer</h3>
+                                <form class="text-center" id="dynamic-form" style="color: #757575;">
                                     
                                     <div class="form-row">
                                             <input type="hidden" id="txt-id" readonly class="form-control">
@@ -293,7 +247,7 @@ a.list-group-item h5{
 
                                     <!-- E-mail -->
                                     <div class="md-form mt-0">
-                                        <input type="text" id="address" class="form-control">
+                                        <input type="text" id="email" class="form-control">
                                         <label for="address">Address</label>
                                     </div>
 
@@ -345,6 +299,11 @@ a.list-group-item h5{
             </div>
         </div>
     </div>
+
+
+
+
+
     </div>
     <!-- Modal: modalCart -->
     <!-- Script -->

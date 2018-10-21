@@ -464,9 +464,13 @@ h5.category{
     font-size: 28px;
     line-height: 100px;
   }
+.customer-list .media-body {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: left;
+}
 
-
-  .toggleTools{
+.customer-list  .toggleTools{
       position: absolute;
       right: 0;
   }
